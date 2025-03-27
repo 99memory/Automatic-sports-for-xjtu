@@ -10,20 +10,25 @@ from urllib.parse import urlparse, parse_qs
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
 import base64
+import os
+
 class Config:
+    # 用户信息
     USER = os.getenv("USER")  
     PASSWORD = os.getenv("PASSWORD")  
-    LONGITUDE = 108.654387  
-    LATITUDE = 34.257229  
 
-    SEND_EMAIL = True
-    SMTP_AUTH_CODE = os.getenv("SMTP_AUTH_CODE")
-    EMAIL_SENDER = os.getenv("EMAIL_SENDER")
-    EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
+    # 位置坐标
+    LONGITUDE = float(os.getenv("LONGITUDE", 108.654387))
+    LATITUDE = float(os.getenv("LATITUDE", 34.257229))
 
+    # 邮件通知
+    SEND_EMAIL = True  
+    SMTP_AUTH_CODE = os.getenv("SMTP_AUTH_CODE")  
+    EMAIL_SENDER = os.getenv("EMAIL_SENDER")  
+    EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")  
+
+    # 加密公钥
     AES_PUBLIC_KEY = "0725@pwdorgopenp"
-    LOG_FILE = "sport_bot.log"
-    LOG_LEVEL = logging.INFO
 
 
 # 初始化日志
