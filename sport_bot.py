@@ -33,10 +33,9 @@ class Config:
 
 # 初始化日志
 logging.basicConfig(
-    filename=Config.LOG_FILE,
-    level=Config.LOG_LEVEL,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    encoding="utf-8",
+    level=logging.INFO,  # 设置日志级别
+    format="%(asctime)s - %(levelname)s - %(message)s",  # 设置日志格式
+    handlers=[logging.StreamHandler()]  # 让日志输出到控制台
 )
 
 # 前端界面的加密函数
