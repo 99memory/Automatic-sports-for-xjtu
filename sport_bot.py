@@ -22,7 +22,7 @@ class Config:
     LATITUDE = float(os.getenv("LATITUDE", 34.257229))
 
     # 邮件通知
-    SEND_EMAIL = True  
+    SEND_EMAIL = False  
     SMTP_AUTH_CODE = os.getenv("SMTP_AUTH_CODE")  
     EMAIL_SENDER = os.getenv("EMAIL_SENDER")  
     EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")  
